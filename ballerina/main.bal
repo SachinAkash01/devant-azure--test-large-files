@@ -22,7 +22,7 @@ public function main() returns error? {
 
     io:println(string `Generating ${SIZE_MB} MB test file at: ${localFilePath}`);
     check generateFile(localFilePath, SIZE_MB * 1024 * 1024);
-    io:println("File generation succeddful!");
+    io:println("File generation successful!");
 
     file:MetaData fi = check file:getMetaData(localFilePath);
     int fileSize = fi.size;
