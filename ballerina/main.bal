@@ -22,12 +22,14 @@ public function main() returns error? {
 
     io:println(string `Generating ${SIZE_MB} MB test file at: ${localFilePath}`);
     check generateFile(localFilePath, SIZE_MB * 1024 * 1024);
+    io:println("File generation succeddful!");
 
     file:MetaData fi = check file:getMetaData(localFilePath);
     int fileSize = fi.size;
 
     string remoteName = string `file-${SIZE_MB}mb.txt`;
     check fileClient->createFile(fileShareName = "testf1", newFileName = remoteName, fileSizeInByte = fileSize, azureDirectoryPath = "test-smb");
+    io:println("File created successfully!");
     check fileClient->putRange(fileShareName = "testf1", localFilePath = localFilePath, azureFileName = remoteName, azureDirectoryPath = "test-smb");
     io:println("Upload complete.");
 }
