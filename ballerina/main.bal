@@ -4,12 +4,12 @@ import ballerina/os;
 import ballerinax/azure_storage_service.files as azure_files;
 
 configurable string SAS = ?;
-configurable string accountName = ?;
+configurable string accName = ?;
 configurable int SIZE_MB = 500;
 
 azure_files:ConnectionConfig fileServiceConfig = {
     accessKeyOrSAS: SAS,
-    accountName: accountName,
+    accountName: accName,
     authorizationMethod: "SAS"
 };
 
