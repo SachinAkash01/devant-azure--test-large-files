@@ -18,18 +18,16 @@ azure_files:FileClient fileClient = check new (fileServiceConfig);
 public function main() returns error? {
     string|() tmp = os:getEnv("TMPDIR");
     string tmpDir = (tmp is string && tmp != "") ? tmp : "/tmp";
-    string localFilePath = tmpDir + "/file-" + SIZE_MB.toString() + "mb.txt";
+    string localFilePath = string `${tmpDir}/file-${SIZE_MB}mb.txt`;
 
-    io:println("Generating " + SIZE_MB.toString() + " MB test file at: " + localFilePath);
     check generateFile(localFilePath, SIZE_MB * 1024 * 1024);
 
     file:MetaData fi = check file:getMetaData(localFilePath);
     int fileSize = fi.size;
 
-    string remoteName = "file-" + SIZE_MB.toString() + "mb.txt";
+    string remoteName = string `file-${SIZE_MB}mb.txt`;
     check fileClient->createFile(fileShareName = "testf1", newFileName = remoteName, fileSizeInByte = fileSize, azureDirectoryPath = "test-smb");
     check fileClient->putRange(fileShareName = "testf1", localFilePath = localFilePath, azureFileName = remoteName, azureDirectoryPath = "test-smb");
-
     io:println("Upload complete.");
 }
 
