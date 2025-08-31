@@ -1,0 +1,4 @@
+[package]
+org = "rocky"
+name = "devant_azure_test_large_files"
+version = "0.1.0"
