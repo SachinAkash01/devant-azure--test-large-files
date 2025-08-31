@@ -323,6 +323,18 @@ dependencies = [
 ]
 
 [[package]]
+org = "ballerinai"
+name = "observe"
+version = "0.0.0"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "observe"}
+]
+modules = [
+	{org = "ballerinai", packageName = "observe", moduleName = "observe"}
+]
+
+[[package]]
 org = "ballerinax"
 name = "azure_storage_service"
 version = "4.3.3"
@@ -358,16 +370,17 @@ dependencies = [
 ]
 
 [[package]]
-org = "rocky"
-name = "devant_azure_test_large_files"
+org = "sachink"
+name = "ballerina"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "file"},
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "os"},
+	{org = "ballerinai", name = "observe"},
 	{org = "ballerinax", name = "azure_storage_service"}
 ]
 modules = [
-	{org = "rocky", packageName = "devant_azure_test_large_files", moduleName = "devant_azure_test_large_files"}
+	{org = "sachink", packageName = "ballerina", moduleName = "ballerina"}
 ]
 

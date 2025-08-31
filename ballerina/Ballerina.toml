@@ -1,4 +1,8 @@
 [package]
-org = "rocky"
-name = "devant_azure_test_large_files"
+org = "sachink"
+name = "ballerina"
 version = "0.1.0"
+distribution = "2201.12.8"
+
+[build-options]
+observabilityIncluded = true
