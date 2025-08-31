@@ -20,6 +20,7 @@ public function main() returns error? {
     string tmpDir = (tmp is string && tmp != "") ? tmp : "/tmp";
     string localFilePath = string `${tmpDir}/file-${SIZE_MB}mb.txt`;
 
+    io:println(string `Generating ${SIZE_MB} MB test file at: ${localFilePath}`);
     check generateFile(localFilePath, SIZE_MB * 1024 * 1024);
 
     file:MetaData fi = check file:getMetaData(localFilePath);
