@@ -371,7 +371,7 @@ dependencies = [
 
 [[package]]
 org = "sachink"
-name = "ballerina"
+name = "devant_azure_test_large_files"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "file"},
@@ -381,6 +381,6 @@ dependencies = [
 	{org = "ballerinax", name = "azure_storage_service"}
 ]
 modules = [
-	{org = "sachink", packageName = "ballerina", moduleName = "ballerina"}
+	{org = "sachink", packageName = "devant_azure_test_large_files", moduleName = "devant_azure_test_large_files"}
 ]
 
